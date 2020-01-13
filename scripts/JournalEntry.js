@@ -4,7 +4,7 @@
  */
 const JournalEntryComponent = entry => {
     return `
-        <section id="entry" class="journalEntry">
+        <section id="entry--${entry.id}" class="journalEntry">
            <div>Date: ${entry.date}</div>
            <div>Concepts Covered: ${entry.concept}</div>
            <div>Journal Entry: ${entry.entry}</div>
