@@ -9,10 +9,10 @@
 // This is the original data. Can't Touch This.
 let journal = []
 
-export const useJournal = () => {
+export const useEntries = () => {
     return journal;
 };
-export const getJounal = () => {
+export const getEntries = () => {
     return fetch('http://localhost:3000/entries', {
         method: "GET",
 }
