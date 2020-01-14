@@ -1,7 +1,40 @@
+import { saveEntry } from "./JournalDataProvider.js"
 
+const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".journalForm")
 
 export const journalFormComponent = () => {
+    
+    eventHub.addEventListener("click", clickEvent => {
+        if (clickEvent.target.id === "saveEntry") {
+            // const hiddenInputValue = document.querySelector("#note-id").value
+            // if (hiddenInputValue !== "") {
+            //     const editedNote = {
+            //         id: parseInt(document.querySelector("#note-id").value, 10),
+            //         noteText: document.querySelector("#note-text").value,
+            //         noteSuspect: document.querySelector("#note-suspect").value,
+            //         date: Date.now()
+            //     }
+
+            //     editNote(editedNote).then(() => {
+            //         eventHub.dispatchEvent(new CustomEvent("noteHasBeenEdited"))
+            //     })
+            // }
+            // else {
+            const message = new CustomEvent("JournalSaved")
+            const newEntry = {
+                "date": document.querySelector("#journalDate").value,
+                "concept": document.querySelector("#conceptsCovered").value,
+                "entry": document.querySelector("#journalEntry").value,
+                "mood": document.querySelector("#mood").value
+
+            }
+            saveEntry(newEntry).then(() => {
+                eventHub.dispatchEvent(message)
+            })
+        }
+    })
+
     const render = () => {
     contentTarget.innerHTML = `
 
@@ -31,8 +64,8 @@ export const journalFormComponent = () => {
             <option value="sad">Sad</option>
         </select>
     </fieldset>
-    <button>Record Journal Entry</button>
     </form>
+    <button id="saveEntry">Record Journal Entry</button>
     `
     }
     render ()

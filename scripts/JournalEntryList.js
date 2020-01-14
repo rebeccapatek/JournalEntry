@@ -3,17 +3,28 @@ import JournalEntryComponent from './JournalEntry.js';
 
 // DOM reference to where all entries will be rendered
 const entryLog = document.querySelector("#entryLog");
+const eventHub = document.querySelector(".container")
 
 const EntryListComponent = () => {
   // Use the journal entry data from the data provider component
-  const entries = useJournalEntries();
+  eventHub.addEventListener("JournalSaved", changeEvent => {
+    console.log("JournalSaved was heard")
+    const updatedEntries = useJournalEntries()
+    render (updatedEntries)
+  })
+
+
+  const render =  (entryCollection) => {
+
+  
   entryLog.innerHTML += `
-        ${entries
+        ${entryCollection
           .map(entry => {
             return JournalEntryComponent(entry);
           })
           .join("")}
     `;
 };
+}
 
 export default EntryListComponent;

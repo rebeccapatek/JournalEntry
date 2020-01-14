@@ -1,25 +1,33 @@
 {
-    "entries" : [
+  "entries": [
     {
-        "id":1,
-        "date": "07/24/2025",
-        "concept": "HTML & CSS",
-        "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-        "mood": "Sad"
+      "id": 1,
+      "date": "07/24/2025",
+      "concept": "HTML & CSS",
+      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+      "mood": "Sad"
     },
     {
-        "id":2,
-        "date": "11/12/2019",
-        "concept": "HTML & CSS",
-        "entry": "We learned about making 1990's websites and how to use flexbox a bit, I like the website css tricks to help understand flexbox.",
-        "mood": "Happy"
+      "id": 2,
+      "date": "11/12/2019",
+      "concept": "HTML & CSS",
+      "entry": "We learned about making 1990's websites and how to use flexbox a bit, I like the website css tricks to help understand flexbox.",
+      "mood": "Happy"
     },
     {
-        "id":3,
-        "date": "11/21/2019",
-        "concept": "javascript",
-        "entry": "We made a card of each fish so that javascript could turn it into html, also learned how to make a diaolg button",
-        "mood": "Still Not Sure"
-    }
-]
+      "id": 3,
+      "date": "11/21/2019",
+      "concept": "javascript",
+      "entry": "We made a card of each fish so that javascript could turn it into html, also learned how to make a diaolg button",
+      "mood": "Still Not Sure"
+    },
+    {
+      "date": "2020-01-14",
+      "concept": "eventHubs",
+      "entry": "I used eventHub and custom events to dispatch messages about changes in a new Journal entry",
+      "mood": "happy",
+      "id": 4
+    },
+
+  ]
 }

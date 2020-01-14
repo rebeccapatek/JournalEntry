@@ -33,3 +33,13 @@ export const useJournalEntries = () => {
     console.log(sortedByDate)
     return sortedByDate
 }
+export const saveEntry = entry => {
+    return fetch('http://localhost:3000/entries', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entry)
+    })
+    .then(getEntries)
+}
